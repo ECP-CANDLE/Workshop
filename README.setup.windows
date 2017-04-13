@@ -23,12 +23,3 @@ tested using Windows 7 and Windows 8.
 > pip install git+git://github.com/Theano/Theano.git
 > pip install git+git://github.com/fchollet/keras.git
 
-6. change directories to where you unzipped the files
-> cd C:\Users\Public\Documents\John\ml_tutorials-master\Topics
-
-7. change directories to the first example diretory
-> cd 1_first_example
-> dir
-
-8. run the example
->python linear_regression.py
