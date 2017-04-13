@@ -16,9 +16,6 @@ export PATH=$HOME/anaconda2/bin:$PATH
 # Install additonal modules not shipped with Anaconda
 conda install -c conda-forge tensorflow
 conda install -c anaconda hdf5=1.8.17
-
-conda install -c conda-forge tensorflow
-conda install -c anaconda hdf5=1.8.17
 conda install -c anaconda theano
 conda install -c conda-forge keras=2
 
