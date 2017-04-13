@@ -1,0 +1,27 @@
+Hi All,
+
+We are looking forward to the hands on tutorials scheduled for tomorrow. Please remember to bring your laptop, and to install Anaconda before you arrive (if you haven’t already). If you are having problems, some of us will be there as early as 8:00am, and we can help. The workshop will start at 9:00am. Specific instructions for the different platforms are listed below. 
+
+The example codes are available for download at https://github.com/ECP-Candle/workshop. The example codes are located in the Topics directory in the relevant subdirectories. You should test your Anaconda environment using the linear_regression.py script located in the 1_first_example subdirectory of the Topics directory.
+
+The example codes might change slightly before tomorrow, but the linear regression example in the first example folder is a good test for your environment.
+
+
+
+A. Mac (preferred)
+
+https://github.com/ECP-Candle/workshop/blob/master/README.setup.mac
+
+
+B. Linux (supported)
+
+https://github.com/ECP-Candle/workshop/blob/master/README.setup.linux
+
+
+C. Windows (unfortunately we will have limited support for windows users, if you can use a mac or linux laptop that would be best)
+
+https://github.com/ECP-Candle/workshop/blob/master/README.setup.windows
+
+
+Best,
+Tom 

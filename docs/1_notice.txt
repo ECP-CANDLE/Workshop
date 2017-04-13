@@ -1,0 +1,23 @@
+
+Hi All,
+
+In preparation for day 2 of the ECP Candle Workshop next week, you will need to prepare an environment on your laptop. Please install Anaconda into your home or user directory. The example codes run on python 2.7. Specific instructions for the different platforms are listed below. Suggestions on improving the instructions are welcome.
+
+
+A. Mac (preferred)
+
+https://github.com/ECP-Candle/workshop/blob/master/README.setup.mac
+
+
+B. Linux (supported)
+
+https://github.com/ECP-Candle/workshop/blob/master/README.setup.linux
+
+
+C. Windows (unfortunately we will have limited support for windows users, if you can use a mac or linux laptop that would be best)
+
+https://github.com/ECP-Candle/workshop/blob/master/README.setup.windows
+
+
+Best,
+Tom 
