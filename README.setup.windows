@@ -1,0 +1,34 @@
+tested using Windows 7 and Windows 8.
+
+1. install anaconda
+  1a. download: (e.g. google "anaconda download"); 
+  1b. install: as local user, which does not require administrator permissions  (unless it fails then install as Administrator)
+
+2. download scripts for class
+  2a. Use Chrome, go to the github link: https://github.com/brettin/ml_tutorials
+  2b. Click on the green 'clone or download' button and choose 'download ZIP'. This will save 'ml_tutorials-master.zip' to where ever you save to.
+
+3. unzip ml_tutorials-master.zip
+  3a. Copy the zip into 'C:\Users\Public\Documents\Yourname'. (MS windows can be picky about permission; I like using the public directory.)
+  3b. unzip with your favorite app (7zip)
+
+4. Anaconda Command Prompt
+  4a. Open the Anaconda Command Prompt
+
+5. Create conda enviroment
+> conda create -n ML_Tutorial python=2.7 anaconda
+> activate ML_Tutorial
+> conda install -c glemaitre imbalanced-learn
+> conda install -c conda-forge tensorflow
+> pip install git+git://github.com/Theano/Theano.git
+> pip install git+git://github.com/fchollet/keras.git
+
+6. change directories to where you unzipped the files
+> cd C:\Users\Public\Documents\John\ml_tutorials-master\Topics
+
+7. change directories to the first example diretory
+> cd 1_first_example
+> dir
+
+8. run the example
+>python linear_regression.py
