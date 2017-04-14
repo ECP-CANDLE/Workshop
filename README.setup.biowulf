@@ -1,0 +1,78 @@
+Author: George Zaki
+Email:  george.zaki@nih.gov
+Date:   04-14-2017
+
+
+This document includes the instruction to setup the student accounts for the
+NIH CANDLE workshop and general instructions to setup the benchmarks on a
+general biowulf account.
+
+1. Instructions to setup the student account for the Workshop:
+
+  - login to biowulf using your assigned account:
+  - For example, student1 can login as:
+  
+    ssh student1@biowulf.nih.gov
+  
+  - Run the general setup script:
+  
+    /data/classes/candle/setup.sh
+  
+  
+  - Edit the ~/candle-jobscript.sh script to run a specific benchmark
+  
+  
+  - Submit your job using:
+  
+    sbatch --partition=student --mem=50g /data/classes/candle/jobrequest.sh
+
+
+2. Instructions to setup a general biowulf account: 
+
+  a. Guidelines to submit a batch job:
+  - Make sure the job request satisfies the following:
+    - Request at least 50GB of memory for the sbatch job (--mem=50g)  
+    - Request enough time to run the benchmarks as shown in every benchmark's readme.
+  
+  
+  
+  b. Clone the benchmarks to a directory on Biowulf (make sure you have 30GB of disk space) : 
+  
+  - For example:
+  
+    export CANDLE_BENCH=/data/`whoami`/candle-benchmakrs
+    git clone https://github.com/ECP-Candle/benchmarks $CANDLE_BENCH
+  
+  
+  c. Run the benchmark using a singularity container:
+  
+    - To run the benchmarks, a singularity image that contains all the required
+      packages is already configured and shared with all biowulf users.
+  
+    - The image is located at /data/classes/candle/keras.img
+  
+    I. Use the singularity image in sinteractive job:
+  
+      - To use the singularity image execute the following commands in your sinteractive job:
+  
+        module load singularity
+  
+      - Start the keras.img while binding your $CANDLE_BENCH directory to the /Benchmarks
+        directory within the singularity image
+  
+        singularity shell --bind $CANDLE_PATH:/Benchmarks /data/classes/candle/keras.img
+  
+      - Run a specific benchmark as shown in  /data/classes/candle/candle-jobscript.sh
+      - For example:
+        
+        python /Benchmarks/Pilot1/P1B1/p1b1_baseline_keras2.py
+  
+  
+  
+    II. Use the singularity image in a batch job:
+  
+      - To execute one or more benchmarks in a batch job, start the singularity
+        image in an "exec" mode while passing a script of jobs to execute. Check
+        /data/classes/candle/jobrequest.sh for an example.  
+  
+        sbatch --mem=50g  /data/classes/candle/jobrequest.sh
