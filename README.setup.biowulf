@@ -40,7 +40,7 @@ general biowulf account.
   
   - For example:
   
-    export CANDLE_BENCH=/data/`whoami`/candle-benchmakrs
+    export CANDLE_BENCH=/data/`whoami`/candle-benchmarks
     git clone https://github.com/ECP-Candle/benchmarks $CANDLE_BENCH
   
   
@@ -60,7 +60,7 @@ general biowulf account.
       - Start the keras.img while binding your $CANDLE_BENCH directory to the /Benchmarks
         directory within the singularity image
   
-        singularity shell --bind $CANDLE_PATH:/Benchmarks /data/classes/candle/keras.img
+        singularity shell --bind $CANDLE_BENCH:/Benchmarks /data/classes/candle/keras.img
   
       - Run a specific benchmark as shown in  /data/classes/candle/candle-jobscript.sh
       - For example:
