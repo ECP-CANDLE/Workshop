@@ -40,7 +40,7 @@ general biowulf account.
   
   - For example:
   
-    export CANDLE_BENCH=/data/`whoami`/candle-benchmarks
+    export CANDLE_BENCH=/data/`whoami`/candle
     git clone https://github.com/ECP-Candle/benchmarks $CANDLE_BENCH
   
   
@@ -54,7 +54,8 @@ general biowulf account.
     I. Use the singularity image in sinteractive job:
   
       - To use the singularity image execute the following commands in your sinteractive job:
-  
+
+        sinteractive --mem=50g
         module load singularity
   
       - Start the keras.img while binding your $CANDLE_BENCH directory to the /Benchmarks
@@ -74,5 +75,19 @@ general biowulf account.
       - To execute one or more benchmarks in a batch job, start the singularity
         image in an "exec" mode while passing a script of jobs to execute. Check
         /data/classes/candle/jobrequest.sh for an example.  
-  
-        sbatch --mem=50g  /data/classes/candle/jobrequest.sh
+
+      - First copy the /data/classes/candle/candle-jobscript.sh to your home directory:
+
+        cp /data/classes/candle/candle-jobscript.sh ~/
+        cp /data/classes/candle/jobrequest.sh ~/candle-jobrequest.sh
+
+      - Edit candle-jobscript.sh and uncomment the benchmark(s) you would like to execute.
+ 
+      - Edit ~/candle-jobrequest.sh  to bind your $CANDLE_BENCH in your file system to the /Benchmarks 
+        directory in the singularity image.  For example, change the singularity call to: 
+        singularity exec --bind $CANDLE_BENCH:/Benchmarks /data/classes/candle/keras.img ./candle-jobscript.sh
+
+      - submit the batch job
+
+        sbatch --mem=50g  ~/candle-jobrequest.sh
+
