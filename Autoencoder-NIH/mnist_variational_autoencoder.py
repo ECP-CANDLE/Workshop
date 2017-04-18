@@ -16,7 +16,7 @@ batch_size = 100
 original_dim = 784
 latent_dim = 2
 intermediate_dim = 256
-epochs = 50
+epochs = 5
 epsilon_std = 1.0
 
 x = Input(batch_shape=(batch_size, original_dim))
@@ -99,5 +99,5 @@ for i, yi in enumerate(grid_x):
 
 fig = plt.figure(figsize=(10, 10))
 plt.imshow(figure, cmap='Greys_r')
-# plt.show()
+plt.show()
 fig.savefig("vae_manifold.png")
